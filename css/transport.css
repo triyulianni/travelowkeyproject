@@ -1,0 +1,206 @@
+/* .payment{
+    height: 320px;
+} */
+
+/* height: 90%; width:90%; margin-left: 10%; border-radius: 10px;  */
+
+/* adjust bus tap image */
+@media screen and (min-width: 601px) {
+    .bus_tap {
+      height: 90%;
+      width:90%;
+
+    }
+  }
+ 
+/* image in modal */
+.bus-img {       
+    border-radius: 10px;
+    display: block;
+    height:80%;
+    width: 90%;
+    margin: auto;
+}
+
+/* in section 3 */
+.bus-stand-info {
+    border-radius: 10px;
+    background-color: #ff3a3a;
+    color: white;
+    /* font-family: ; */
+}
+
+.horizontal {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.info-img {
+    height: 25px;
+    width: auto;
+    position: relative;
+    bottom: 25px;
+    left: 35px;
+}
+
+
+.table{
+    width: 98.6%;
+}
+
+.zoom:hover{
+    color: #424242; 
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  opacity: 1;
+  transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -webkit-transform: scale(1.5); 
+
+}
+
+.nav_right_search_button{
+    width: auto;
+    height: auto;
+}
+
+
+  .modal-content{
+    z-index: 1000;
+  } 
+
+ /* .modal.fade {
+    z-index: 10000000 !important;
+  }  */
+
+
+  /* .modal-backdrop{
+      z-index: -99999;
+  } */
+
+  .modal-backdrop {
+    background-color: transparent;
+ }
+
+ .modal_button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  /* .modal{
+      top:10%;
+  } */
+
+  /* .modal-dialog{
+      z-index: 9999;
+  } */
+
+  /* @media (max-width: 600px) {
+    .modal-dialog {
+      width: 200px;
+      height: 200px;
+      z-index: 100000
+      /* margin: 30px auto; */
+  
+
+
+@media (max-width: 600px) {
+    .modal-title{
+        font-size: 12px;
+    }
+
+    .modal-body{
+        font-size: 10px;
+    }
+
+    .modal-header{
+        padding: 8px;
+    }
+    .bus_tap {
+        /* text-align: center; */
+          width: 125px;
+          height: 150px;
+        }
+
+    .info-img {
+        height: 15px;
+        width: auto;
+        position: relative;
+        bottom: 30px;
+        left: 10px;
+    }
+
+    .type1 {
+        width: 95%;
+        height: 50%;
+        /* z-index:  */
+        font-size: 10px;
+        }
+
+    .bus-stop-input {
+        height:80%;
+
+    }
+
+    .search-icon {
+        height:12px;
+
+        margin-left: 50%;
+        position: relative;
+        right:10px;
+
+    }
+
+    .search-bg {
+        height:80%;
+        width: 20%;
+    }
+
+    ::-webkit-input-placeholder {
+        font-size: 10px;
+        position: relative;
+        bottom: 2px;
+        /* text-align: center; */
+       
+     }
+     
+
+    .search-bar {
+        position: relative;
+        right:45px;
+        width:380px
+     }
+     
+    .nav_right_search_button, .nav_right_search_area {
+        position: relative;
+        left:10px;
+        margin: 0px;
+     }
+
+     .nav_right_search_button{
+        position: relative;
+        right:40px;
+     }
+    .table-responsive-sm {
+        font-size:10px !important;
+    }
+
+    .wheelchair {
+        height: 12px;
+    }
+
+    .bus-road{
+    font-size:12px !important;
+    }
+
+    .fs-3{
+        font-size:16px !important;
+    }
+    
+
+}
+
+

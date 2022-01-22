@@ -1,0 +1,264 @@
+.mobile{
+    display: none;
+}
+
+#logo{
+    width: 325px;
+}
+
+#logo_link{
+    z-index: 0;
+}
+
+#nav_bar_cloud{
+    position: relative;
+    padding-bottom: 10px;
+    border-bottom: 3.5px solid #ff3a3a;
+}
+
+#nav_bar_cloud:before{
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/navbar/cloud.jpg");
+    background-position: 50% 70%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+#nav_bar_rain{
+    position: relative;
+    padding-bottom: 10px;
+    border-bottom: 3.5px solid #ff3a3a;
+}
+
+#nav_bar_rain:before{
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/navbar/rain.jpg");
+    background-position: 50% 43%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.65;
+}
+
+.top_row{
+    padding-top: 20px; 
+    padding-bottom: 5px;
+}
+
+.weather_info{
+    color: black;
+    border-radius: 10px;
+    opacity: 80%;
+    width: 90%;
+    margin-left: 50px;
+}
+
+.weather_logo{
+    width: 50px; 
+    height: 50px; 
+    margin-top: 20px; 
+    margin-left: 20px; 
+    margin-bottom: 20px;
+}
+
+.temp_details{
+    font-family: Roboto !important;
+    font-size: 27px;
+    display: flex;
+    margin-top: 20px; 
+    margin-left: -60px;
+}
+
+.temp_details_inner{
+    font-family: Roboto !important;
+    font-size: 12px;
+}
+
+.nav_right_links{
+    border-radius: 10px;
+    width: 95%;
+    height: 60px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    opacity: 80%;
+}
+
+.nav_right_links span{
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 30px;
+}
+
+.nav_right_links a{
+    color: black;
+}
+
+#link_border_right{
+    display: inline-block;
+    border-right: 2.25px solid #ff3a3a;
+    line-height: 10px;
+    padding: 8px 70px;
+}
+
+/*CSS Link Hover Effect inspired Jesper KC: https://codepen.io/jesperkc/pen/YaGYRr?editors=1100*/
+
+a.hover{
+    font-family: 'Roboto', serif !important;
+}
+a.hover span {
+    font-weight: 400;
+    transition: all 0.5s;
+    margin-bottom: 20px;
+}
+a.hover span:nth-child(2) {
+    transition-delay: 0.025s;
+}
+a.hover span:nth-child(3) {
+    transition-delay: 0.05s;
+}
+a.hover span:nth-child(4) {
+    transition-delay: 0.075s;
+}
+a.hover span:nth-child(5) {
+    transition-delay: 0.1s;
+}
+a.hover span:nth-child(6) {
+    transition-delay: 0.125s;
+}
+a.hover span:nth-child(7) {
+    transition-delay: 0.15s;
+}
+a.hover span:nth-child(8) {
+    transition-delay: 0.175s;
+}
+a.hover span:nth-child(9) {
+    transition-delay: 0.2s;
+}
+
+a.hover span:nth-child(10) {
+    transition-delay: 0.225s;
+}
+a.hover span:nth-child(11) {
+    transition-delay: 0.25s;
+}
+a.hover:hover span {
+    font-weight: 700;
+}
+a.hover:hover span:nth-child(11) {
+    transition-delay: 0.25s;
+}
+a.hover:hover span:nth-child(10) {
+    transition-delay: 0.225s;
+}
+a.hover:hover span:nth-child(9) {
+    transition-delay: 0.2s;
+}
+a.hover:hover span:nth-child(8) {
+    transition-delay: 0.175s;
+}
+a.hover:hover span:nth-child(7) {
+    transition-delay: 0.15s;
+}
+a.hover:hover span:nth-child(6) {
+    transition-delay: 0.125s;
+}
+
+a.hover:hover span:nth-child(5) {
+    transition-delay: 0.1s;
+}
+a.hover:hover span:nth-child(4) {
+    transition-delay: 0.075s;
+}
+a.hover:hover span:nth-child(3) {
+    transition-delay: 0.05s;
+}
+a.hover:hover span:nth-child(2) {
+    transition-delay: 0.025s;
+}
+a.hover:hover span:nth-child(1) {
+    transition-delay: 0s;
+}
+a.hover-shadow:hover {
+    text-shadow: 0.5px 0.5px 0px #ff3a3a, 1px 1px 0px #ff3a3a, 1.5px 1.5px 0px #ff3a3a;
+}
+a.hover-color:hover {
+    border-color: black;
+}
+
+.nav_right_search_area{
+    display: flex;
+    margin-left: 30px;
+    margin-top: 25px;
+}
+.search_text{
+    width: 89%;
+}
+.nav_right_search_button button{
+    margin-left: 20px;
+}
+
+/* CSS Button Hover Effect inspired Emanuel G Souza https://codepen.io/emanuelgsouza/pen/YVJOZo?editors=1100*/
+
+.search_button{
+    position: relative;
+    border: none;
+}
+
+.search_button{
+    position: relative;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    font-size: 18px;
+    color: #ff3a3a;
+    text-align: center;
+    text-decoration: none;
+    width: 73px;
+    height: 38px;
+}
+.search_button.type1.type1::after, .search_button.type1.type1::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    border: 2px solid;
+    transition: all 0.6s ease;
+    border-radius: 2px; 
+}
+
+.search_button.type1.type1::after {
+    bottom: 0;
+    right: 0;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: #ff3a3a;
+    border-right-color: #ff3a3a; 
+}
+.search_button.type1.type1::before {
+    top: 0;
+    left: 0;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-top-color: #ff3a3a;
+    border-left-color: #ff3a3a; 
+}
+.search_button.type1.type1:hover:after, .search_button.type1.type1:hover:before {
+    width: 100%;
+    height: 100%; 
+}

@@ -1,0 +1,45 @@
+.center {
+    width: 310px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cards {
+    transition: all 0.2s ease;
+    cursor: pointer
+}
+
+.cards:hover {
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    transform: scale(1.1)
+}
+
+@media screen and (min-width: 601px) {
+    .traveller img {
+        margin: auto;
+        height: 400px;
+
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .traveller img {
+        margin: auto;
+        height: 200px;
+    }
+  }
+
+.traveller{
+    margin-top: 20px;
+}
+
+p {
+    color: grey;
+    font-size: smaller;
+    margin-bottom: 0;
+}
+
+.emer {
+    color: red;
+}

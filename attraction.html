@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/home_nav.css">
+    <link rel="stylesheet" href="css/home_slideshow.css">
+    <link rel="stylesheet" href="css/page_style.css">
+    <link rel="stylesheet" href="css/attraction.css">
+    <!-- Mobile -->
+    <link rel="stylesheet" media="screen and (max-width: 391px)" href="css/home_mobile.css">
+
+    <title>Attractions</title>
+
+</head>
+
+<body id="app">
+    <div  :id="[hamToggle ? '' : 'overflow']">
+        <!-- Navigation Bar -->
+        <!-- :id="[forecast.includes('cloud') ? 'nav_bar_cloud' : 'nav_bar_rain']" -->
+        <div class="container-fluid" :id="[forecast.includes('cloud') ? 'nav_bar_cloud' : 'nav_bar_rain']">
+            <!-- Start of Top Row -->
+            <div class="row top_row">
+                <div class="col d-flex justify-content-center">
+                    <a href="index.html" id="logo_link">
+                        <img src="images/navbar/logo.png" id="logo" alt="">
+                    </a>
+                </div>
+            </div>
+            <!-- End of Top Row -->
+            <!-- Start of Bot Row -->
+            <div class="row">
+                <div class="col">
+                    <div class="container-fluid">
+                        <div class="row weather_info">
+                            <div class="col">
+                                <img :src="weather_logo_src" alt="" class="weather_logo">
+                            </div>
+                            <div class="col">
+                                <div v-model="temperature" class="col temp_details fw-bold">
+                                    {{temperature}} &nbsp;&nbsp;
+                                    <p v-model="forecast humidity wind" class="temp_details_inner">
+                                        {{forecast}}
+                                        <br>
+                                        {{humidity}}
+                                        <br>
+                                        {{wind}}
+                                    </p>
+                                </div>
+                                <div class="hamburger mobile">
+                                    <div class="hamburger_box"></div>
+                                    <div id="menuToggle">
+                                        <div id="clip"></div>
+                                        <input v-model="hamToggle" type="checkbox" />
+                                        
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        
+                                        <ul id="menu">
+                                        <a href="index.html"><li>Home</li></a>
+                                        <a href="attraction.html"><li>Attractions</li></a>
+                                        <a href="map.html"><li>Map</li></a>
+                                        <a href="transport.html"><li>Transport</li></a>
+                                        </ul>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="nav_right_links">
+                        <span style="position: absolute; left: 500px; margin-top: 2px;">
+                            <a id="link_border_right" class="hover hover-shadow hover-color"
+                                href="index.html">
+                                <span>H</span><span>o</span><span>m</span><span>e</span>
+                            </a>
+                        </span>
+                        <span style="position: absolute; left: 730px; margin-top: 2px;">
+                            <a id="link_border_right" class="hover hover-shadow hover-color"
+                                href="attraction.html">
+                                <span>A</span><span>t</span><span>t</span><span>r</span><span>a</span><span>c</span><span>t</span><span>i</span><span>o</span><span>n</span><span>s</span>
+                            </a>
+                        </span>
+                        <span style="position: absolute; left: 1030px; margin-top: 2px;">
+                            <a id="link_border_right" class="hover hover-shadow hover-color" href="map.html">
+                                <span>M</span><span>a</span><span>p</span>
+                            </a>
+                        </span>
+                        <span style="position: absolute; left: 1300px; margin-top: -6px;">
+                            <a class="hover hover-shadow hover-color" href="transport.html">
+                                <span>T</span><span>r</span><span>a</span><span>n</span><span>s</span><span>p</span><span>o</span><span>r</span><span>t</span>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Bot Row -->
+        </div>
+    </div>
+
+    <!-- header image -->
+    <div class="wrap  wrap_mobile" style="background-image: url(/images/attractions/attraction_header3.JPG);">
+        <div>
+            <h1 class="text_over_image text_over_image_mobile"> TOP-RATED TOURIST ATTRACTIONS
+            </h1>
+        </div>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="attraction div_margin">
+        <h4 class="heading">View By Category</h5>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+        
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                <ul class="nav nav-tabs py-3 nav-fill" id="myTab" role="tablist">
+                    
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="zoo-tab" data-bs-toggle="tab" data-bs-target="#zoo" type="button"
+                        role="tab" aria-controls="zoo" aria-selected="true">
+                        <img src="images/attractions/zoologo.png" style="width: 60px; height: 60px" alt="" class ="d-none d-sm-block mx-auto">Aquariums & Zoos</button>
+        
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="theme-tab" data-bs-toggle="tab" data-bs-target="#theme" type="button"
+                            role="tab" aria-controls="theme" aria-selected="false"><img
+                                src="images/attractions/amusement-park.png" style="width: 60px; height: 60px"
+                                alt="" class ="d-none d-sm-block mx-auto">Theme & Water Parks</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="museum-tab" data-bs-toggle="tab" data-bs-target="#museum" type="button"
+                            role="tab" aria-controls="museum" aria-selected="false"><img src="images/attractions/museum.png"
+                                style="width: 60px; height: 60px" alt="" class ="d-none d-sm-block mx-auto">Museums & Galleries</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="scenic-tab" data-bs-toggle="tab" data-bs-target="#scenic" type="button"
+                            role="tab" aria-controls="scenic" aria-selected="false"><img src="images/attractions/mbslogo.png"
+                                style="width: 60px; height: 60px" alt="" class ="d-none d-sm-block mx-auto">Scenic attractions</button>
+                    </li>
+                </ul>
+                <div class = "text-center mx-5">
+                    <a href="map.html" id="view_in_map" class="btn btn-danger mx-auto">View Map</a>
+                </div>
+            </div>
+            </div>
+        </nav>
+
+        <div class="tab-content py-4" id="myTabContent">
+            <div class="tab-pane fade show active" id="zoo" role="tabpanel" aria-labelledby="zoo-tab">
+                <div class="container" style = "padding-left: 0px; padding-right: 0px;">
+                    <div class="row">
+                        <!-- zoo & aquariums -->
+                        
+                        <div class="col-md-6 col-lg-4 col-xl-3 d-flex">
+                            
+                            <div class="cards card text-dark h-100 w-100">
+                                <img src="images/attractions/zoo.jpg" class="card-img-top" alt="1">
+                                <div class="card-body">
+                                    <h5 class="card-title title fw-bolder">Singapore Zoo</h5>
+                                    <p class="card-text fw-light">
+                                        Get ready for a wild adventure with over 2,800 animals inhabiting our lush
+                                        tropical rainforest
+                                    </p>
+                                </div>
+
+                                <div class="card-footer pb-4 bg-white border-white">
+                                    <h5 class="card-title pb-2 fw-bold">$18-55</h5>
+                                    <a href="https://www.mandai.com/en/ticketing/admission-and-rides/parks-selection.html"
+                                    class="btn btn-danger me-3">Book now</a>
+                                    <a href="https://goo.gl/maps/A2GruLHZQSNYNez76" target="_blank" class="btn btn-danger">Get Directions</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
+                            <div class="cards card text-dark h-100 w-100" style="width: 18rem;">
+                                <img src="images/attractions/seaaquarium.jpg" class="card-img-top" alt="1">
+                                <div class="card-body">
+                                    <h5 class="card-title title fw-bolder">S.E.A Aquarium</h5>
+                                    <p class="card-text fw-light">
+                                        Enter and explore the marine realm of S.E.A. Aquarium, home to more than 100,000
+                                        marine animals!
+                                    </p>
+                                </div>
+
+                                <div class="card-footer pb-4 bg-white border-white">
+                                    <h5 class="card-title pb-2 fw-bold">$23-32</h5>
+                                    <a href="https://www.rwsentosa.com/en/attractions/sea-aquarium/tickets"
+                                        class="btn btn-danger me-3">Book now</a>
+                                    <a href="https://goo.gl/maps/9GWsyick1VnweRPaA" target="_blank" class="btn btn-danger">Get Directions</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
+                            <div class="cards card text-dark h-100 w-100" style="width: 18rem;">
+                                <img src="images/attractions/riversafari.jpg" class="card-img-top" alt="1">
+                                <div class="card-body">
+                                    <h5 class="card-title title fw-bolder">River Safari</h5>
+                                    <p class="card-text fw-light">
+                                        Embark on a adventure of the amazing Amazon river
+                                    </p>
+                                </div>
+
+                                <div class="card-footer pb-4 bg-white border-white">
+                                    <h5 class="card-title pb-2 fw-bold">$20-34</h5>
+                                    <a href="https://www.mandai.com/en/river-wonders/visit.html"
+                                        class="btn btn-danger me-3">Book now</a>
+                                    <a href="https://goo.gl/maps/otAmWftsQFhSMVwP9" target="_blank" class="btn btn-danger">Get Directions</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
+                            <div class="cards card text-dark h-100 w-100" style="width: 18rem;">
+                                <img src="images/attractions/night safari.jpg" class="card-img-top" alt="1">
+                                <div class="card-body">
+                                    <h5 class="card-title title fw-bolder">Night Safari</h5>
+                                    <p class="card-text fw-light">
+                                        
+                                        Embark on a wild nocturnal adventure
+                                    </p>
+                                </div>
+
+                                <div class="card-footer pb-4 bg-white border-white">
+                                    <h5 class="card-title pb-2 fw-bold">$32-55</h5>
+                                    <a href="https://www.mandai.com/en/ticketing/admission-and-rides/parks-selection.html"
+                                        class="btn btn-danger me-3">Book now</a>
+                                    <a href="https://goo.gl/maps/xRNtodFDfv1bQVmo9" target="_blank" class="btn btn-danger">Get Directions</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="theme" role="tabpanel" aria-labelledby="theme-tab">
+
+                <div class="container">
+                    <div class="row">
+                        <!-- theme parks -->
+                        <div class="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
+                            <div class="cards card text-dark h-100 w-100 " style="width: 18rem;">
+                                <img src="images/attractions/universalstudios.jpg" class="card-img-top" alt="1">
+                                <div class="card-body">
+                                    <h5 class="card-title title fw-bolder">Universal Studio Singapore</h5>
+                                    <p class="card-text fw-light">
+                                        Southeast Asia's first and only Universal Studios theme park
+                                    </p>
+
+                                </div>
+
+                                <div class="card-footer pb-4 bg-white border-white">
+                                    <h5 class="card-title pb-2 fw-bold">$40-85</h5>
+                                    <a href="https://www.rwsentosa.com/en/attractions/universal-studios-singapore/promotions-and-events/trick-or-thrills/tickets?gclid=Cj0KCQjwtrSLBhCLARIsACh6RmjZwdch3CogSDfAOUnF4YkWpJY1P6AOLmeC-X1L5KDNknhzh5lHRNEaAv_nEALw_wcB&gclsrc=aw.ds"
+                                        class="btn btn-danger me-3">Book now</a>
+                                    <a href="https://goo.gl/maps/SsEZ6XszjacSKqSy9" target="_blank" class="btn btn-danger">Get Directions</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
+                            <div class="cards card text-dark h-100 w-100" style="width: 18rem;">
+                                <img src="images/attractions/advcove.jpg" class="card-img-top" alt="1">
+                                <div class="card-body">
+                                    <h5 class="card-title title fw-bolder">Adventure Cove Waterpark</h5>
+                                    <p class="card-text fw-light">
+                                        From zooming down high-speed water slides to drifting lazily down a winding
+                                        river
+                                    </p>
+
+                                </div>
+
+                                <div class="card-footer pb-4 bg-white border-white">
+                                    <h5 class="card-title pb-2 fw-bold">$24-32</h5>
+                                    <a href="https://www.rwsentosa.com/en/attractions/adventure-cove-waterpark/tickets?gclid=Cj0KCQjwtrSLBhCLARIsACh6Rmj5S1kZvXTiTfGqtznivGYrmklIZG1JiSfcpRJ0ey1JcxTAlXXzthQaAsPYEALw_wcB&gclsrc=aw.ds"
+                                        class="btn btn-danger me-3">Book now</a>
+                                    <a href="https://goo.gl/maps/Tcfjwis8kzjKUCkw5" target="_blank" class="btn btn-danger">Get Directions</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
+                            <div class="cards card text-dark h-100 w-100" style="width: 18rem;">
+                                <img src="images/attractions/hydrodash.jpg" class="card-img-top" alt="1">
+                                <div class="card-body">
+                                    <h5 class="card-title title fw-bolder">Hydrodash</h5>
+                                    <p class="card-text fw-light">
+                                        
+                                        Get ready to climb, leap and bounce through Hydrodash!
+                                    </p>
+
+                                </div>
+
+                                <div class="card-footer pb-4 bg-white border-white">
+                                    <h5 class="card-title pb-2 fw-bold">$15</h5>
+                                    <a href="https://hydrodash.rezdy.com/catalog/412040/website"
+                                        class="btn btn-danger me-3">Book now</a>
+                                    <a href="https://goo.gl/maps/5pagFg4AUoYDwDng7" target="_blank" class="btn btn-danger">Get Directions</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
+                            <div class="cards card text-dark h-100 w-100" style="width: 18rem;">
+                                <img src="images/attractions/snowcity.jpg" class="card-img-top" alt="1">
+                                <div class="card-body">
+                                    <h5 class="card-title title fw-bolder">Snow city</h5>
+                                    <p class="card-text fw-light">
+                                        
+                                        A snow chamber that delivers snow experience all year round
+                                    </p>
+
+                                </div>
+
+                                <div class="card-footer pb-4 bg-white border-white">
+                                    <h5 class="card-title pb-2 fw-bold">$21-35</h5>
+                                    <a href="https://ticket.snowcity.com.sg/" class="btn btn-danger me-3">Book now</a>
+                                    <a href="https://goo.gl/maps/zHkmAdShFGpYmJY59" target="_blank" class="btn btn-danger">Get Directions</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="museum" role="tabpanel" aria-labelledby="museum-tab">
+                <!-- museums -->
+                <div class="container">
+                    <div class="row">
+                        <!-- must add row, if not cannot register breakpoint -->
+                        <!-- zoo & aquariums -->
+                        <div class="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
+                            <div class="cards card text-dark h-100 w-100" style="width: 18rem;">
+                                <img src="images/attractions/artsciencemusuem.jpg" class="card-img-top" alt="1">
+                                <div class="card-body">
+                                    <h5 class="card-title title fw-bolder">Art Science Musuem</h5>
+                                    <p class="card-text fw-light">
+                                        
+                                        Visit the iconic cultural attraction that is the world's first art-science
+                                        museum
+                                    </p>
+
+                                </div>
+
+                                <div class="card-footer pb-4 bg-white border-white">
+                                    <h5 class="card-title pb-2 fw-bold">$14-$45</h5>
+                                    <a href="https://www.marinabaysands.com/museum/ticket.html#"
+                                        class="btn btn-danger me-3">Book now</a>
+                                    <a href="https://goo.gl/maps/phKqoigPsYN2jhhT8" target="_blank" class="btn btn-danger">Get Directions</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
+                            <div class="cards card text-dark h-100 w-100" style="width: 18rem;">
+                                <img src="images/attractions/nationalgallery.jpg" class="card-img-top" alt="1">
+                                <div class="card-body">
+                                    <h5 class="card-title title fw-bolder">National Gallery</h5>
+                                    <p class="card-text fw-light">
+                                        
+                                        Experience the world's largest public display of modern Southeast Asian art at
+                                        the National Gallery Singapore
+                                    </p>
+
+                                </div>
+
+                                <div class="card-footer pb-4 bg-white border-white">
+                                    <h5 class="card-title pb-2 fw-bold">$15-20</h5>
+                                    <a href="https://tickets.nationalgallery.sg/tickets" class="btn btn-danger me-3">Book now</a>
+                                    <a href="https://goo.gl/maps/DzKcqZTpeV4reKK66" target="_blank" class="btn btn-danger">Get Directions</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
+                            <div class="cards card text-dark h-100 w-100" style="width: 18rem;">
+                                <img src="images/attractions/gillmanbarracks.jpeg" class="card-img-top" alt="1">
+                                <div class="card-body">
+                                    <h5 class="card-title title fw-bolder">Gillman Barracks</h5>
+                                    <p class="card-text fw-light">
+                                    
+                                        Singapore's contemporary arts cluster, home to international art galleries
+                                    </p>
+
+                                </div>
+
+                                <div class="card-footer pb-4 bg-white border-white">
+                                    <h5 class="card-title pb-2 fw-bold">$0</h5>
+                                    <a href="https://www.madametussauds.com/singapore/tickets/?gclid=Cj0KCQjwtrSLBhCLARIsACh6Rmhwu4K9MLp0cj-qs-hiMhoIp-DaXjNEDJpa-1zlVUc0kaGEXZ1GJTIaAjofEALw_wcB"
+                                        class="btn btn-danger me-3">Book now</a>
+                                    <a href="https://goo.gl/maps/wPByDhctriXe7zkg9" target="_blank" class="btn btn-danger">Get Directions</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
+                            <div class="cards card text-dark h-100 w-100" style="width: 18rem;">
+                                <img src="images/attractions/madametussauds.jpg" class="card-img-top" alt="1">
+                                <div class="card-body">
+                                    <h5 class="card-title title fw-bolder">Madame Tussauds</h5>
+                                    <p class="card-text fw-light">
+                                        
+                                        Experience the world's largest public display of modern Southeast Asian art at
+                                        the National Gallery Singapore
+                                    </p>
+
+                                </div>
+
+                                <div class="card-footer pb-4 bg-white border-white">
+                                    <h5 class="card-title pb-2 fw-bold">$22-64</h5>
+                                    <a href="https://www.madametussauds.com/singapore/tickets/?gclid=Cj0KCQjwtrSLBhCLARIsACh6Rmhwu4K9MLp0cj-qs-hiMhoIp-DaXjNEDJpa-1zlVUc0kaGEXZ1GJTIaAjofEALw_wcB"
+                                        class="btn btn-danger me-3">Book now</a>
+                                    <a href="https://goo.gl/maps/v8CGnfe4nDEjSLk37" target="_blank" class="btn btn-danger">Get Directions</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="scenic" role="tabpanel" aria-labelledby="scenic-tab">
+                <div class="container">
+                    <div class="row">
+                        <!-- scenic attractions -->
+                        <div class="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
+                            <div class="cards card text-dark h-100 w-100" style="width: 18rem;">
+                                <img src="images/attractions/sgflyer.jpg" class="card-img-top" alt="1">
+                                <div class="card-body">
+                                    <h5 class="card-title title fw-bolder">Singapore Flyer</h5>
+                                    <p class="card-text fw-light">
+                                        
+                                        Take in the City From 165 Metres Above
+                                    </p>
+
+                                </div>
+
+                                <div class="card-footer pb-4 bg-white border-white">
+                                    <h5 class="card-title pb-2 fw-bold">$15-33</h5>
+                                    <a href="https://www.singaporeflyer.com/en/ticket/singapore-flyer-ticket"
+                                        class="btn btn-danger me-3">Book now</a>
+                                    <a href="https://goo.gl/maps/zkUJzFTCLkhYMace6" target="_blank" class="btn btn-danger">Get Directions</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
+                            <div class="cards card text-dark h-100 w-100" style="width: 18rem;">
+                                <img src="images/attractions/mbs.jfif" class="card-img-top" alt="1">
+                                <div class="card-body">
+                                    <h5 class="card-title title fw-bolder">Marina Bay Sands</h5>
+                                    <p class="card-text fw-light">
+                                        
+                                        Visit Singapore's most iconic hotel for the world's largest rooftop Infinity
+                                        Pool and award-winning dining
+                                    </p>
+
+                                </div>
+
+                                <div class="card-footer pb-4 bg-white border-white">
+                                    <h5 class="card-title pb-2 fw-bold">$399-1775</h5>
+                                    <a href="https://www.marinabaysands.com/deals/rooms.html" class="btn btn-danger me-3">Book now</a>
+                                    <a href="https://goo.gl/maps/wq9fynRrxLPEBGZv7" target="_blank" class="btn btn-danger">Get Directions</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
+                            <div class="cards card text-dark h-100 w-100" style="width: 18rem;">
+                                <img src="images/attractions/gardensbythebay.jpg" class="card-img-top" alt="1">
+                                <div class="card-body">
+                                    <h5 class="card-title title fw-bolder">Gardens by the Bay</h5>
+                                    <p class="card-text fw-light">
+                                        
+                                        A national garden and premier horticultural attraction
+                                    </p>
+
+                                </div>
+
+                                <div class="card-footer pb-4 bg-white border-white">
+                                    <h5 class="card-title pb-2 fw-bold">$12-28</h5>
+                                    <a href="https://ticket.gardensbythebay.com.sg/product/listing"
+                                        class="btn btn-danger me-3">Book now</a>
+                                    <a href="https://goo.gl/maps/nCKreiPtv8mWRwUg7" target="_blank" class="btn btn-danger">Get Directions</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
+                            <div class="cards card text-dark h-100 w-100" style="width: 18rem;">
+                                <img src="images/attractions/botanic gardens.jfif" class="card-img-top" alt="1">
+                                <div class="card-body">
+                                    <h5 class="card-title title fw-bolder">Botanic Gardens</h5>
+                                    <p class="card-text fw-light">
+                                    
+                                        The first and only tropical botanic garden on the UNESCO’s World Heritage List
+                                    </p>
+
+                                </div>
+
+                                <div class="card-footer pb-4 bg-white border-white">
+                                    <h5 class="card-title pb-2 fw-bold">$0-15</h5>
+                                    <a href="https://www.nparks.gov.sg/sbg/visit-us" class="btn btn-danger me-3">Book now</a>
+                                    <a href="https://goo.gl/maps/vtwcX8Vvk2VZrnQB8" target="_blank" class="btn btn-danger">Get Directions</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <!-- Section 2 -->
+    <div class="div_margin">
+        <h4 class="heading">Discover more</h5>
+
+        <div id="carouselExampleIndicators" class="carousel slide" style="height: 40%; width: auto;"
+            data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/attractions/mbs.jfif" class="d-block w-100 h-100" alt="First">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Marina Bay Sands</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/attractions/seaaquarium.jpg" class="d-block w-100 h-100" alt="Second">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Sea Aquarium Singapore</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/attractions/gardens-by-the-bay-image.jpg" class="d-block w-100 h-100" alt="Third">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Gardens by the Bay</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/attractions/usscover.jpg" class="d-block w-100 h-100" alt="Fourth">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Universal Studios Singapore</h5>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Section 3 -->
+    <div class="div_margin">
+        <h4 class="heading">Don't Miss Out on the Latest Deals!</h5>
+
+        <div class="alert alert-info" role="alert">
+            <a href="https://www.rwsentosa.com/en/attractions/sea-aquarium/tickets" class="stretched-link">SEA
+                Aquarium</a>: Get a Free Treat with adult ticket from $32(U.P. $41). While stocks last.
+        </div>
+        <div class="alert alert-info" role="alert">
+            <a href="https://www.rwsentosa.com/en/attractions/universal-studios-singapore/promotions-and-events/trick-or-thrills/tickets?gclid=Cj0KCQjwtrSLBhCLARIsACh6RmjZwdch3CogSDfAOUnF4YkWpJY1P6AOLmeC-X1L5KDNknhzh5lHRNEaAv_nEALw_wcB&gclsrc=aw.ds"
+                class="stretched-link">Universal Studios</a>: Get your Tricks or Thrills at $69 (U.P. $81)/adult ticket
+            with Free vouchers & more.
+        </div>
+    </div>
+
+
+
+    <br><br>
+
+    <!-- <DO NOT TOUCH> -->
+
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Vue 3 -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="js/home_nav.js"></script>
+    <script src="js/map.js"></script>
+
+    <!-- </DO NOT TOUCH> -->
+</body>
+
+</html>
